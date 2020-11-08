@@ -7,9 +7,6 @@ if switchon == nil then
     config_lib:SetSetting("switch", false);
 end;
 switchon = config_lib:GetSetting("switch");
-for i, _ in pairs(config_handle.config) do
-    print(i);
-end
 print(switchon);
 local window = uilib:AddWindow("Test");
 local tab1   = window:AddTab("Test 1");
@@ -20,12 +17,15 @@ end)
 local tempswitch = false;
 local switch = tab1:AddSwitch("Test Save", function(s)
     tempswitch = s;
+    print(tempswitch)
 end)
 switch:Set(switchon);
 
 game:GetService("Players").PlayerRemoving:Connect(function(Player)
     if Player == game:GetService("Players").LocalPlayer then
+        print(tempswitch)
         config_lib:SetSetting("switch", tempswitch);
+        print(config_lib:GetSetting("switch"));
         config_lib:Write2Config();
     end
 end)

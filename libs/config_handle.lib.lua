@@ -36,7 +36,13 @@ function config_lib:SetSetting(sName, uValue)
 end;
 
 function config_lib:GetSetting(sName)
-    return config_lib.config[sName];
+    -- for some unholy reason doing "return config_lib.config[sName]" doesn't work
+    for i,v in pairs(config_lib.config) do
+        print(i);
+        if i == sName then
+            return v;
+        end
+    end
 end;
 
 print('Loaded Config Library!');
