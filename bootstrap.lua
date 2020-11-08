@@ -2,9 +2,6 @@
 print('Loading Bootstrap...');
 local httpService = game:GetService("HttpService");
 local gameList    = httpService:JSONDecode(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/info/gameList.json", true));
-for i,v in pairs(gameList)
-print(i,v)
-end
 local info        = gameList[tostring(game.PlaceId)];
 
 if info ~= nil then
