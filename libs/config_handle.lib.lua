@@ -43,7 +43,7 @@ end;
 
 function config_lib:PrintStack()
     for i,v in pairs(config_lib.config) do
-        print('["' .. tostring(i) .. '"] = ' .. tostring(v));
+        print(string.format('["$s"] = %s', tostring(i), tostring(v)));
     end
 end;
 
