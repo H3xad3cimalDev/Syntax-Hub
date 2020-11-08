@@ -1,6 +1,4 @@
 -- test for work
-print('loading')
-print(readfile("Syntax Hub JSON/" .. game.PlaceId .. ".syntax_h.json"));
 local config_lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/libs/config_handle.lib.lua", true))();
 local uilib      = loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/libs/syntax_ui.lib.lua", true))();
 
