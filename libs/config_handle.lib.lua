@@ -1,9 +1,7 @@
-local config_lib = {config = {}};
+local config_lib = {};
 
 local httpService = game:GetService("HttpService");
 local config_name = game.PlaceId .. ".syntax_h.json";
-
-print('Loading Config Library...');
 
 if not isfolder("Syntax Hub JSON") then
     makefolder("Syntax Hub JSON");
@@ -16,7 +14,7 @@ if isfile("Syntax Hub JSON/" .. config_name) then
 end;
 
 function config_lib:IfSetting(sName)
-    if config_lib.config[sName] then
+    if config[sName] then
         return true;
     else
         return false;
@@ -24,7 +22,7 @@ function config_lib:IfSetting(sName)
 end;
 
 function config_lib:Config2JSON()
-    return httpService:JSONEncode(config_lib.config);
+    return httpService:JSONEncode(config);
 end;
 
 function config_lib:Write2Config()
@@ -32,19 +30,11 @@ function config_lib:Write2Config()
 end;
 
 function config_lib:SetSetting(sName, uValue)
-    config_lib.config[sName] = uValue;
+    config[sName] = uValue;
 end;
 
 function config_lib:GetSetting(sName)
-    -- for some unholy reason doing "return config_lib.config[sName]" doesn't work
-    for i,v in pairs(config_lib.config) do
-        print(i);
-        if i == sName then
-            return v;
-        end
-    end
+    return config[sName]
 end;
-
-print('Loaded Config Library!');
 
 return config_lib;
