@@ -2,13 +2,12 @@
 print('Loading Bootstrap...');
 local httpService = game:GetService("HttpService");
 local gameList    = httpService:JSONDecode(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/info/gameList.json", true));
+for i,v in pairs(gameList)
+print(i,v)
+end
 local info        = gameList[tostring(game.PlaceId)];
 
-for i,v in pairs(info)
-print(i,v);
-end
-
-if info then
+if info ~= nil then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/scripts/" .. info.Script, true))();
     print("Executed Script and Loaded Bootstrap!");
 else
