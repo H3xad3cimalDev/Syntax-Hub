@@ -21,6 +21,7 @@ switch:Set(switchon);
 
 game:GetService("Players").PlayerRemoving:Connect(function(Player)
     if Player == game:GetService("Players").LocalPlayer then
+        config_lib:SetSetting("switch", switchon);
         config_lib:Write2Config();
     end
 end)
