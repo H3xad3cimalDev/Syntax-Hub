@@ -5,6 +5,7 @@ local gameList    = httpService:JSONDecode(game:HttpGet("https://raw.githubuserc
 local info        = gameList[tostring(game.PlaceId)];
 
 if info ~= nil then
+    
     loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/scripts/" .. info.Script, true))();
     print("Executed Script and Loaded Bootstrap!");
 else
