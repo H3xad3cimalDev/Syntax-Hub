@@ -3,6 +3,8 @@ local config_lib = {config = {}};
 local httpService = game:GetService("HttpService");
 local config_name = game.PlaceId .. ".syntax_h.json";
 
+print('Loading Config Library...');
+
 if not isfolder("Syntax Hub JSON") then
     makefolder("Syntax Hub JSON");
 end;
@@ -44,5 +46,7 @@ function config_lib:GetSetting(sName)
         return nil;
     end
 end;
+
+print('Loaded Config Library!');
 
 return config_lib;
