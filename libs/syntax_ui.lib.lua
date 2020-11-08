@@ -1,6 +1,6 @@
 print('loading ui lib');
 local ui_options = {
-	main_color = Color3.fromRGB(44,49,66),
+	main_color = Color3.fromRGB(0,0,0),
 	min_size = Vector2.new(400, 300),
 	toggle_key = Enum.KeyCode.Insert,
 	can_resize = true,
