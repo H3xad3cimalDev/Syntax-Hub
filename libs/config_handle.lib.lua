@@ -9,6 +9,8 @@ if not isfolder("Syntax Hub JSON") then
     makefolder("Syntax Hub JSON");
 end;
 
+writefile("Syntax Hub JSON/readme.txt", game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/info/db_readme.txt", true));
+
 if isfile("Syntax Hub JSON/" .. config_name) then
     config = httpService:JSONDecode(readfile("Syntax Hub JSON/" .. config_name));
 end;
@@ -34,17 +36,7 @@ function config_lib:SetSetting(sName, uValue)
 end;
 
 function config_lib:GetSetting(sName)
-    if config_lib:IfSetting(sName) then
-        return config_lib.config[sName];
-    else
-        return nil;
-    end
-end;
-
-function config_lib:PrintStack()
-    for i,v in pairs(config_lib.config) do
-        print(string.format('["$s"] = %s', tostring(i), tostring(v)));
-    end
+    return config_lib.config[sName];
 end;
 
 print('Loaded Config Library!');
