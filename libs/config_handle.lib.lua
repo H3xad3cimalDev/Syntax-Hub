@@ -32,10 +32,6 @@ end;
 function config_lib:SetSetting(sName, uValue)
     if not config_lib:IfSetting(sName) then
         config_lib.config[sName] = uValue;
-        return true;
-    else
-        config_lib.config[sName] = uValue;
-        return true;
     end
 end;
 
