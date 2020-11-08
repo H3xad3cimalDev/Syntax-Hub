@@ -30,9 +30,7 @@ function config_lib:Write2Config()
 end;
 
 function config_lib:SetSetting(sName, uValue)
-    if not config_lib:IfSetting(sName) then
-        config_lib.config[sName] = uValue;
-    end
+    config_lib.config[sName] = uValue;
 end;
 
 function config_lib:GetSetting(sName)

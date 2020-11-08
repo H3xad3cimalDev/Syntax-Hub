@@ -1,5 +1,6 @@
 -- test for work
 print('loading')
+print(readfile("Syntax Hub JSON/" .. game.PlaceId .. ".syntax_h.json"));
 local config_lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/libs/config_handle.lib.lua", true))();
 local uilib      = loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/libs/syntax_ui.lib.lua", true))();
 
@@ -8,7 +9,7 @@ if switchon == nil then
     config_lib:SetSetting("switch", false);
 end;
 switchon = config_lib:GetSetting("switch");
-
+print(switchon);
 local window = uilib:AddWindow("Test");
 local tab1   = window:AddTab("Test 1");
 tab1:AddButton("Print", function()
