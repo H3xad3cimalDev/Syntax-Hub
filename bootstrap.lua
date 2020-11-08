@@ -10,7 +10,7 @@ if info ~= nil then
 else
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "Syntax Hub Bootstrap",
-        Text  = "We're sorry for the issue but we couldn't find a script for the game " .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId) .. ". :(",
+        Text  = "We're sorry for the issue but we couldn't find a script for the game " .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .. " :(",
         Duration = 6,
         Button1 = "Ok"
     });

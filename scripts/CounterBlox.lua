@@ -1,10 +1,7 @@
 -- test for work
+print('loading')
 local config_lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/libs/config_handle.lib.lua", true))();
 local uilib      = loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/libs/syntax_ui.lib.lua", true))();
-
-for i,v in pairs(config_lib) then
-    print(i,v)
-end
 
 local switchon = config_lib:GetSetting("switch");
 if switchon == nil then
