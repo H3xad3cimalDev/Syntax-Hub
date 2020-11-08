@@ -42,7 +42,7 @@ function config_lib:GetSetting(sName)
 end;
 
 function config_lib:PrintStack()
-    for i,v in pairs(config_lib.config)
+    for i,v in pairs(config_lib.config) do
         print('["' .. i .. '"] = ' .. v);
     end
 end;
