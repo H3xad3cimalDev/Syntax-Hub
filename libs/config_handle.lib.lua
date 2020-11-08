@@ -41,6 +41,12 @@ function config_lib:GetSetting(sName)
     end
 end;
 
+function config_lib:PrintStack()
+    for i,v in pairs(config_lib.config)
+        print('["' .. i .. '"] = ' .. v);
+    end
+end;
+
 print('Loaded Config Library!');
 
 return config_lib;
