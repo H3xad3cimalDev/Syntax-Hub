@@ -1,28 +1,37 @@
 -- test for work
 local config_lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/libs/config_handle.lib.lua", true))();
-local uilib      = loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/libs/syntax_ui.lib.lua", true))();
+local imgui      = loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/libs/syntax_ui.lib.lua", true))();
 
-local switchon = config_lib:GetSetting("switch");
-if switchon == nil then
-    config_lib:SetSetting("switch", false);
-end;
-switchon = config_lib:GetSetting("switch");
-local window = uilib:AddWindow("Test");
-local tab1   = window:AddTab("Test 1");
-tab1:AddButton("Print", function()
-    print('test')
+local hub_window  = imgui:AddWindow("Syntax Hub");
+
+local tab_aim     = hub_window:AddTab("Aim");
+local tab_vision  = hub_window:AddTab("Visual");
+local tab_gunmod  = hub_window:AddTab("Gun Modifications");
+local tab_credits = hub_window:AddTab("Credits");
+
+-- Credits
+tab_credits:AddButton("H3xad3cimal Github", function()
+    setclipboard("https://github.com/H3xad3cimalDev");
 end)
 
-local tempswitch = false;
-local switch = tab1:AddSwitch("Test Save", function(s)
-    tempswitch = s;
-    print(tempswitch)
-end)
-switch:Set(switchon);
+-- Aim
+local switch_silent_aim = tab_aim:AddSwitch("Silent Aim", function(s)
 
-game:GetService("Players").PlayerRemoving:Connect(function(Player)
-    if Player == game:GetService("Players").LocalPlayer then
-        config_lib:SetSetting("switch", tempswitch);
-        config_lib:Write2Config();
-    end
+end);
+
+local switch_team_check = tab_aim:AddSwitch("Team Check", function(s)
+
+end);
+
+-- Vision
+local switch_bullet_tracers = tab_vision:AddSwitch("Bullet Tracers", function(s)
+
+end);
+
+local switch_team_check = tab_vision:AddSwitch("ESP", function(s)
+
+end);
+-- Mod Guns
+local button_infinte_ammo = tab_gunmod:AddButton("Infinite Ammo", function()
+
 end)
