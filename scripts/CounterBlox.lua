@@ -2,7 +2,7 @@
 local config_lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/libs/config_handle.lib.lua", true))();
 local imgui      = loadstring(game:HttpGet("https://raw.githubusercontent.com/H3xad3cimalDev/Syntax-Hub/master/libs/syntax_ui.lib.lua", true))();
 
-local hub_window  = imgui:AddWindow("Syntax Hub");
+local hub_window  = imgui:AddWindow("Syntax Hub - Counter Blox");
 
 local tab_aim     = hub_window:AddTab("Aim");
 local tab_vision  = hub_window:AddTab("Visual");
