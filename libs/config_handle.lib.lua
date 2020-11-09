@@ -11,9 +11,8 @@ writefile("Syntax Hub JSON/readme.txt", game:HttpGet("https://raw.githubusercont
 
 if isfile("Syntax Hub JSON/" .. config_name) then
     config = httpService:JSONDecode(readfile("Syntax Hub JSON/" .. config_name));
-else
-	config = {};
 end;
+if config == nil then config = {} end
 
 function config_lib:IfSetting(sName)
     if config[sName] then
